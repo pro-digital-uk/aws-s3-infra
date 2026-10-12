@@ -37,13 +37,6 @@ data "aws_iam_policy_document" "s3_bucket_policy" {
   }
 }
 
-resource "aws_s3_bucket_website_configuration" "main" {
-  bucket = aws_s3_bucket.main.id
-
-  index_document {
-    suffix = "index.html"
-  }
-}
 
 resource "aws_s3_object" "main" {
   bucket       = aws_s3_bucket.main.id
